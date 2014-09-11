@@ -1,0 +1,22 @@
+<footer class="footer">
+<div class="container">
+    <p>版权所有 © 2010-2013 opscoder.com </p>
+    <p>
+    Powered by <a href="http://www.djangoproject.com" target="_blank">Django</a>. 
+    Host on <a href="http://www.digitalocean.com" target="_blank">DigitalOcean</a>.
+    </p>
+    <p>
+    当前{{ online_num }}人在线,急需人气
+    {% if online_num > 50 %}
+    <strong>囧~</strong>
+    {% endif %}
+    {% if online_num < 10 %}
+    <strong>汗~</strong>
+    {% endif %}
+    </p>
+    <p>本页面加载耗时:<!!LOAD_TIMES!!>s</p>
+    <p>
+        <a href="/sitemap.xml">网站地图</a>
+    </p>    
+</div>
+</footer>
