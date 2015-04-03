@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from selfblog import settings
 from utils.cache import cache_decorator
 
+
 STATUS = {
     0: u'正常',
     1: u'草稿',

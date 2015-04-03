@@ -14,7 +14,7 @@ from sitemap import PostSitemap
 
 urlpatterns = patterns('',
     url(r'^$', IndexView.as_view(), name='home'),
-
+    url(r'^ueditor/',include('DjangoUeditor.urls' )),
     url(r'^feed|rss/$', LatestEntriesFeed()),
     url(r'^sitemap\.xml$', cache_page(60 * 60 * 12)(sitemap_views.sitemap), {'sitemaps': {'posts': PostSitemap}}),
 

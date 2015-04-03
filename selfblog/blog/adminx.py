@@ -1,6 +1,7 @@
 #coding:utf-8
 import xadmin
 from django.core import urlresolvers
+import markdown
 
 from .models import Post
 from .models import Category
@@ -15,6 +16,7 @@ class PostAdmin(object):
               'category', 'is_top', 'is_old', 'pub_time')
     list_display = ('preview', 'title', 'category', 'is_top', 'pub_time')
     list_display_links = ('title', )
+    # style_fields = {"content": 'ueditor'}
 
     ordering = ('-pub_time', )
     list_per_page = 15
@@ -38,10 +40,11 @@ class PostAdmin(object):
         if not obj.is_old:
             obj.content_html = restructuredtext(obj.content)
         else:
-            obj.content_html = obj.content.replace('\r\n', '<br/>')
-            import re
-            obj.content_html = re.sub(r"\[cc lang='\w+?'\]", '<pre>', obj.content_html)
-            obj.content_html = obj.content_html.replace('[/cc]', '</pre>')
+            obj.content_html = markdown.markdown(obj.content,['fenced_code', 'codehilite'])
+            # obj.content_html = obj.content.replace('\r\n', '<br/>')
+            # import re
+            # obj.content_html = re.sub(r"\[cc lang='\w+?'\]", '<pre>', obj.content_html)
+            # obj.content_html = obj.content_html.replace('[/cc]', '</pre>')
         obj.save()
 
 

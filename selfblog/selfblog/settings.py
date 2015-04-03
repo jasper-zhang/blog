@@ -13,17 +13,17 @@ ROOT_PATH = path.abspath(path.join(path.dirname('settings.py'), path.pardir))
 ADMINS = (
     ('jasper', 'uping.jasper@gmail.com'),
 )
-ALLOWED_HOSTS = ['localhost', 'opscoder.info']
+ALLOWED_HOSTS = ['localhost', ]
 
 MANAGERS = ADMINS
 
 if DEBUG:
-    DOMAIN = 'http://opscoder.info'
+    DOMAIN = 'xxx'
     DB_NAME = 'selfblog.sqlite3'
     DB_USER = 'root'
     DB_PWD = 'root'
 else:
-    DOMAIN = 'http://www.opscoder.info'
+    DOMAIN = 'xxxx'
     DB_NAME = 'mydb'
     DB_USER = ''
     DB_PWD = ''
@@ -32,8 +32,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': "blog",
-        'USER': "jasper",
-        'PASSWORD': "123qwe",
+        'USER': "xx",
+        'PASSWORD': "xx",
         'HOST': "127.0.0.1",
         'PORT': 3306,
     }
@@ -63,7 +63,7 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
-MEDIA_ROOT = ''
+MEDIA_ROOT = 'media/'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -74,12 +74,12 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-#STATIC_ROOT = ''
+STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
-
+# STATIC_ROOT = "/home/jasper/app/blog/selfblog/static/"
 # Additional locations of static files
 STATICFILES_DIRS = (
     path.join(ROOT_PATH, 'selfblog/static'),
@@ -128,6 +128,7 @@ DIRECTORY_URLS = (
 )
 
 INSTALLED_APPS = (
+    # 'DjangoUeditor',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -157,7 +158,7 @@ if DEBUG:
     MIDDLEWARE_CLASSES = MIDDLEWARE_CLASSES + ('debug_toolbar.middleware.DebugToolbarMiddleware', )
     LOG_FILE = '/tmp/blog.log'
 else:
-    LOG_FILE = '/home/jasper/run/log/all.log'
+    LOG_FILE = 'xx'
 
 LOGGING = {
     'version': 1,
@@ -249,8 +250,8 @@ ONE_DAY = 24*60*60
 FIF_MIN = 15 * 60
 FIVE_MIN = 5 * 60
 
-DUOSHUO_SECRET = 'xxxxxxxxxxxxxxxxxxxxxxxxx'
-DUOSHUO_SHORT_NAME = 'xxxxxxxx'
+DUOSHUO_SECRET = 'xx'
+DUOSHUO_SHORT_NAME = 'xxx'
 
 # 微信
 WEIXIN_APPID = 0

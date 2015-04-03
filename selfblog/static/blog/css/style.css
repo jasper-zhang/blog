@@ -1,5 +1,6 @@
 body {
-    background-color:#e8e8e8;
+    /*background-color: rgba(96, 146, 160, 0.45);*/
+    background: #7ab5d3 url("/static/bg.jpg") center 0 no-repeat fixed;
 }
 #content {
     background-color:#fff;
@@ -132,6 +133,7 @@ h1 a {
 
 .article .entry_post p {
     text-indent:2em;
+    line-height: 26px;
 }
 
 .info {
@@ -157,11 +159,24 @@ h1 a {
     font-size:15px;
 }
 
-.detail .content p {
-    padding: 5px 0px;
-    margin: 0 0 18px;
-    line-height: 26px;
+.detail .content li{
+    margin: 10px;
 }
+
+.detail .content ol li{
+    margin: 10px;
+}
+
+.detail .content p {
+    margin: 10px;
+    line-height: 26px;
+    /*text-indent: 2em;*/
+}
+
+.detail .content li p {
+    text-indent: 0;
+}
+
 .detail .box {
     padding:10px 0;
     border-bottom:1px #DDD solid;
@@ -234,4 +249,20 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222',end
 }
 .navbar-inner .container {
     height: 45px;
+}
+
+pre {
+    background-color: #333;
+    border-radius: 5px;
+    color: #f8f8f2 !important;
+    font-size: 15px;
+}
+
+.detail .content ul, ol {
+    padding-left: 10px;
+    margin: 0 0 10px 25px;
+}
+
+.content h1, h2, h3, h4, h5 {
+    margin: 2px 0;
 }
